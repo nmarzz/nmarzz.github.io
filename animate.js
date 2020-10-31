@@ -286,7 +286,7 @@ function init() {
   context= myCanvas.getContext('2d');
   ctx.canvas.width  = window.innerWidth;
   ctx.canvas.height = window.innerHeight;
-  pc = new PointController(1400/ease_scale,756/ease_scale,9)
+  pc = new PointController(ctx.canvas.width,ctx.canvas.height,9)
   pc.initPoints()
   setInterval(draw, 10)
 
