@@ -1,7 +1,7 @@
 body {
-    width: 100%;
+    width: 70%;
     height: 100%;
-    margin: 0px;
+    margin: 60px;
     border: 0;
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
@@ -30,7 +30,7 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;    
+    color: #333;
 }
 footer {
     border-top: 1px solid #d5d5d5;
