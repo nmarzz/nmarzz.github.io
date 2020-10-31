@@ -6,6 +6,11 @@ body {
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
 }
+
+mainBody {
+  background-color: gray;
+
+}
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
