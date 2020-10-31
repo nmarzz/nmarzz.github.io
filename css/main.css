@@ -8,12 +8,6 @@ body {
     background-color: #daf2ff;
 }
 
-mainBody {
-  background-color: gray;
-  border-style: solid;
-  border: 1px;
-
-}
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -26,7 +20,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #4e4e4e;
 }
 a:hover {
     text-decoration: underline;
@@ -41,7 +35,7 @@ p {
     color: #333;
 }
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #777575;
     font-size: .8em;
 }
 
@@ -53,6 +47,11 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+.boxed {
+  border: 1px solid green ;
+}
+
 
 /* The switch - the box around the slider */
 .switch {
