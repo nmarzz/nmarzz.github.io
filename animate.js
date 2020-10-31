@@ -284,9 +284,9 @@ function drawClusters(points,context){
 function init() {
   ease_scale = 1
   context= myCanvas.getContext('2d');
-  ctx.canvas.width  = window.innerWidth;
-  ctx.canvas.height = window.innerHeight;
-  pc = new PointController(ctx.canvas.width,ctx.canvas.height,9)
+  context.canvas.width  = window.innerWidth;
+  context.canvas.height = window.innerHeight;
+  pc = new PointController(context.canvas.width,context.canvas.height,9)
   pc.initPoints()
   setInterval(draw, 10)
 
