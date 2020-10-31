@@ -9,6 +9,8 @@ body {
 
 mainBody {
   background-color: gray;
+  border-style: solid;
+  border: 1px;
 
 }
 nav ul, footer ul {
