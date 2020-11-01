@@ -42,12 +42,13 @@ footer ul {
 }
 
 .image-cropper {
-  width: 150px;
-  height: 150px;
+  width: 175px;
+  height: 175px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
   float:left;
+  margin: 10px;
 }
 
 img {
