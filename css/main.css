@@ -17,6 +17,22 @@ nav ul, footer ul {
     font-weight: bold;
 
 }
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
