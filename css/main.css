@@ -1,7 +1,7 @@
 body {
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
-    background-color: #daf2ff;
+    background-color: #FFFFFF;
 }
 
 nav ul, footer ul {
