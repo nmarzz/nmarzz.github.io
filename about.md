@@ -2,13 +2,10 @@
 layout: default
 title: About me
 ---
-<div class="blurb">
-	<h1>Hi, I'm Noah Marshall</h1>
-	<div class="image-cropper">
-	  <img src="headshot.jpg" class="rounded" />
-	</div>
 
-	<p>I'm a Masters student at McGill University as part of the [Oberman Lab](https://www.adamoberman.net/oberman-lab.html).
+# Hi, I'm Noah
+
+	I'm a Masters student at McGill University as part of the [Oberman Lab](https:/www.adamoberman.net/oberman-lab.html).
 		I'm very excited to have the oppurtunity to work in this amazing group of people. The lab's focus is on bringing mathematical insights
 		into the world of deep learning.
 
@@ -34,6 +31,3 @@ title: About me
 		we can spend more time testing out new ideas and visualizing how semi-supervised methods can improve learning abilities. We are also working on shining light on what
 		data augmentation does. Data augmentation is used in nearly every state-of-the-art model; however, data augmentation is mostly guided by intuition knowadays. By developing a more sophisticated
 		view of augmentation we hope to spark a conversation about better ways to train.
-
-	</p>
-</div><!-- /.blurb -->
