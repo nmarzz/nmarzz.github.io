@@ -3,8 +3,7 @@ html {
 }
 
 
-body{
-    overflow: hidden; /*  Disable scrollbars */
+body{  
     display: block;  /* No floating content on sides */
     background-color: #FFFFFF;
     min-height: 100%;
