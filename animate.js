@@ -307,8 +307,8 @@ function draw()
   plotpoints(pc.points,context)
   drawClusters(pc.points,context)
 
-  console.log(document.getElementById("animateSwitch").checked)
-  if (true){
+
+  if (document.getElementById("animateSwitch").checked){
   pc.updatePoints()
   }
 
