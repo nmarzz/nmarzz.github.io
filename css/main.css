@@ -2,10 +2,12 @@ html {
   min-height: 100%;
 }
 
-body {
+
+body{
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
     background-color: #FFFFFF;
+    min-height: 100%;
 }
 
 nav ul, footer ul {
@@ -13,7 +15,7 @@ nav ul, footer ul {
     padding: 0px;
     list-style: none;
     font-weight: bold;
-    position: absolute;
+
 }
 nav ul li, footer ul li {
     display: inline;
@@ -39,6 +41,10 @@ footer {
     border-top: 1px solid #777575;
     font-size: .8em;
     position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
 }
 
 ul.posts {
@@ -54,6 +60,8 @@ ul.posts li {
   width: 70%;
   height: 100%;
   margin: 60px;
+  border: 1px;
+  border-style: dashed;
 }
 
 .animation{
