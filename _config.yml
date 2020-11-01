@@ -1,3 +1,4 @@
 name: Noah Marshall
 markdown: kramdown
   input: GFM
+  highlighter: rouge
