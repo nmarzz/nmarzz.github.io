@@ -1,8 +1,11 @@
 html {
+  min-height: 100%;
+}
+
+body {
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
     background-color: #FFFFFF;
-    min-height: 100%;
 }
 
 nav ul, footer ul {
@@ -35,6 +38,7 @@ p {
 footer {
     border-top: 1px solid #777575;
     font-size: .8em;
+    position: absolute;
 }
 
 ul.posts {
