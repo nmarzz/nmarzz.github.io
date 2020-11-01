@@ -75,6 +75,11 @@ p {
     line-height: 1.5em;
     color: #333;
 }
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 footer {
     border-top: 1px solid #777575;
     font-size: .8em;
