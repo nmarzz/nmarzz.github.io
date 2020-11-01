@@ -1,11 +1,12 @@
----
-layout: default
-title: Noah Marshall
----
+
 <script type="text/javascript" src = "./animate.js"></script>
 <body onLoad="init();">
 
-
+<div class = "animation">
+    {% if page.url =="/"  %}
+    <canvas id="myCanvas" style= "position:absolute; left:0px; top:0px;"></canvas>
+    {% endif %}
+  </div>
 <!-- Rounded switch -->
 <label class="switch">
   <input id = "animateSwitch" type="checkbox" checked>
