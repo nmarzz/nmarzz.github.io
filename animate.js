@@ -3,7 +3,7 @@ var context;
 
 // Shape functions
 class Point {
-  constructor(x,y,theta=Math.random()*2*Math.PI,speed = Math.random()*0.6 + 0.2) {
+  constructor(x,y,theta=Math.random()*2*Math.PI,speed = Math.random()*0.4 + 0.2) {
     this.x = x;
     this.y = y;
     this.theta = theta
