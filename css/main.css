@@ -24,6 +24,7 @@ nav ul, footer ul {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+  float:left;
 }
 
 img {
@@ -94,6 +95,7 @@ ul.posts li {
   display: inline-block;
   width: 60px;
   height: 34px;
+  float:left;
 }
 
 /* Hide default HTML checkbox */
