@@ -9,11 +9,6 @@ body{
     min-height: 100%;
 }
 
-#page-container {
-  position: relative;
-  min-height: 100vh;
-}
-
 h2 {
   font-family:'Verdana', 'Geneva', 'Sans-Serif';
   display: block;
@@ -78,10 +73,6 @@ p {
     font-size: 1em;
     line-height: 1.5em;
     color: #333;
-}
-
-#content-wrap {
-  padding-bottom: 70px;    /* Footer height */
 }
 
 footer {
