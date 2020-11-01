@@ -301,10 +301,14 @@ function init() {
 
 function draw()
 {
+
   context.clearRect(0, 0, myCanvas.width, myCanvas.height)
   kmeans(pc.points)
   plotpoints(pc.points,context)
   drawClusters(pc.points,context)
+
+  if (document.getElementById("animateSwitch").checked){
   pc.updatePoints()
+  }
 
 }
