@@ -3,7 +3,7 @@ layout: default
 title: About me
 ---
 
-# Hi, I'm Noah
+
 
 	I'm a Masters student at McGill University as part of the [Oberman Lab](https:/www.adamoberman.net/oberman-lab.html).
 		I'm very excited to have the oppurtunity to work in this amazing group of people. The lab's focus is on bringing mathematical insights
