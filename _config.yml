@@ -1,8 +1,4 @@
 name: Noah Marshall
-markdown: kramdown
-highlighter: rouge
 
-kramdown:
-  input: GFM
-  
+highlighter: rouge
 
