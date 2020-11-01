@@ -56,6 +56,11 @@ ul.posts li {
   z-index: 20;
 }
 
+.animation{
+  position: absolute;
+  z-index: -1;
+}
+
 
 /* The switch - the box around the slider */
 .switch {
