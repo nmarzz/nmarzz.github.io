@@ -302,10 +302,14 @@ function init() {
 function draw()
 {
 
+  var info = document.getElementById("info").getBoundingClientRect();
+  console.log(info.top)
+
   context.clearRect(0, 0, myCanvas.width, myCanvas.height)
   kmeans(pc.points)
   plotpoints(pc.points,context)
   drawClusters(pc.points,context)
+  context.clearRect(info.top, info.left,info.width,info.height)
 
 
   if (document.getElementById("animateSwitch").checked){
