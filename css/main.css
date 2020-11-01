@@ -1,8 +1,4 @@
 body {
-    width: 70%;
-    height: 100%;
-    margin: 60px;
-    border: 0;
     overflow: hidden; /*  Disable scrollbars */
     display: block;  /* No floating content on sides */
     background-color: #daf2ff;
@@ -48,7 +44,12 @@ ul.posts li {
     list-style: none;
 }
 
-
+.info {
+  width: 70%;
+  height: 100%;
+  margin: 60px;
+  border: 0;
+}
 /* .boxed {
   position: absolute;
   border: 1px solid green ;
