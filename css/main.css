@@ -3,12 +3,16 @@ html {
 }
 
 
-body{  
+body{
     display: block;  /* No floating content on sides */
     background-color: #FFFFFF;
     min-height: 100%;
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
 
 h2 {
   font-family:'Verdana', 'Geneva', 'Sans-Serif';
@@ -76,7 +80,7 @@ p {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
+  padding-bottom: 70px;    /* Footer height */
 }
 
 footer {
