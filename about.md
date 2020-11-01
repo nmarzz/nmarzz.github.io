@@ -6,7 +6,7 @@ title: About me
 
 
 	I'm a Masters student at McGill University as part of the [Oberman Lab](https:/www.adamoberman.net/oberman-lab.html).
-		I'm very excited to have the oppurtunity to work in this amazing group of people. The lab's focus is on bringing mathematical insights
+		I'm very excited to have the opportunity to work in this amazing group of people. The lab's focus is on bringing mathematical insights
 		into the world of deep learning.
 
 		I did my undergraduate degree in Honours Mathematics at UBC Okanagan, picking up a Minor in data science along the way. At UBCO,
@@ -18,16 +18,16 @@ title: About me
 
 		After graduating in December 2019, I moved to Vancouver; however, I quickly found myself out of work and having to move back home in the fiasco
 		we now know as the coronavirus pandemic. I lucked out soon after and again had the opportunity to work with Dr. Tyson again. Over the summer, I worked on
-		two projects. The first, was to attemp to model the economic impact of Covid-19 on British Columbia. Second, to build on Dr. Tyson's past work modelling
+		two projects. The first, was to attempt to model the economic impact of Covid-19 on British Columbia. Second, to build on Dr. Tyson's past work modelling
 		the interplay between opinion and disease dynamics. Both projects turned out to be quite interesting, and the results should be publishable soon. I was able to contribute what I could to our
 		knowledge of disease and greatly improve my own talents.
 
-		At this point, I get to turn my attention to the field of deep learning. This field took off over the course of my undergraduate studies. Since 2015, artificial intellegence
-		has become vastly more capable. However the field is still in its infancy. I'm proud to join the talented community of people working to devlop our knowledge of these complex systems
+		At this point, I get to turn my attention to the field of deep learning. This field took off over the course of my undergraduate studies. Since 2015, artificial intelligence
+		has become vastly more capable. However the field is still in its infancy. I'm proud to join the talented community of people working to develop our knowledge of these complex systems
 		that our becoming integral parts of our culture. One immediate interest is in exploring contrastive and metric based learning methods. Although older, metric based methods have plenty of room to
 		grow as our understanding becomes more sophisticate.
 
 		I'm currently taking a leading role in developing a Pytorch framework to make the research of semi-supervised methods easier. With less time spend writing models and accessories
 		we can spend more time testing out new ideas and visualizing how semi-supervised methods can improve learning abilities. We are also working on shining light on what
-		data augmentation does. Data augmentation is used in nearly every state-of-the-art model; however, data augmentation is mostly guided by intuition knowadays. By developing a more sophisticated
+		data augmentation does. Data augmentation is used in nearly every state-of-the-art model; however, data augmentation is mostly guided by intuition nowadays. By developing a more sophisticated
 		view of augmentation we hope to spark a conversation about better ways to train.
