@@ -78,7 +78,7 @@ ul.posts li {
   height: 100%;
   margin: 60px;
   border: 1px;
-  border-style: dashed;
+  /* border-style: dashed; */
 }
 
 .animation{
