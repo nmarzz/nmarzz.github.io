@@ -48,8 +48,12 @@ ul.posts li {
     list-style: none;
 }
 
+
 .boxed {
+  position: absolute;
   border: 1px solid green ;
+  background-color: #daf2ff;
+  z-index: 20;
 }
 
 
