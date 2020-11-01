@@ -48,14 +48,8 @@ ul.posts li {
   width: 70%;
   height: 100%;
   margin: 60px;
-  border: 0;
-}
-/* .boxed {
-  position: absolute;
   border: 1px solid green ;
-  background-color: #daf2ff;
-  z-index: 20;
-} */
+}
 
 .animation{
   position: absolute;
