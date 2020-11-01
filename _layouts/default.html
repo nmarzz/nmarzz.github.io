@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 	<html>
+
 				<div id= "info"  class = "info">
 				<head>
 					<title>{{ page.title }}</title>
@@ -8,6 +9,7 @@
 				</head>
 
 				<body>
+					<div id="page-container">
 					<nav>
 			    		<ul>
 			        		<li><a href="/">Home</a></li>
@@ -17,7 +19,7 @@
 					</nav>
 				<div class="container">
 
-				{{ content | markdownify}}
+				{{ content }}
 
 				</div><!-- /.container -->
 			</div> <!-- /.info -->
@@ -35,5 +37,6 @@
 	        		<li><a href="https://github.com/nmarzz">github.com/nmarzz</a></li>
 				</ul>
 			</footer>
+		</div> <!-- page-container -->
 		</body>
 	</html>
