@@ -303,7 +303,7 @@ function draw()
 {
 
   var info = document.getElementById("info").getBoundingClientRect();
-  console.log(info.top)
+  
 
   context.clearRect(0, 0, myCanvas.width, myCanvas.height)
   kmeans(pc.points)
