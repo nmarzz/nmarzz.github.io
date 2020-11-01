@@ -3,7 +3,7 @@ layout: default
 title: About me
 ---
 
-
+```markdown
 
 	I'm a Masters student at McGill University as part of the [Oberman Lab](https:/www.adamoberman.net/oberman-lab.html).
 		I'm very excited to have the opportunity to work in this amazing group of people. The lab's focus is on bringing mathematical insights
@@ -31,3 +31,4 @@ title: About me
 		we can spend more time testing out new ideas and visualizing how semi-supervised methods can improve learning abilities. We are also working on shining light on what
 		data augmentation does. Data augmentation is used in nearly every state-of-the-art model; however, data augmentation is mostly guided by intuition nowadays. By developing a more sophisticated
 		view of augmentation we hope to spark a conversation about better ways to train.
+```
