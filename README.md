@@ -1,2 +1,1 @@
-# nmarzz.github.io
 \#notawebdev
