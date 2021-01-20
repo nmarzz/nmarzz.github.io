@@ -41,7 +41,7 @@ From your new file system click the **Access points** tab and then click **Creat
 
 Give it a name and root directory. Enter the following details and a tag.
 
-<img src="imgs/accessPointDetails.png" alt="createEFS" style="zoom:50%;" />
+<img src="/imgs/accessPointDetails.png" alt="createEFS" style="zoom:50%;" />
 
 
 
@@ -201,7 +201,7 @@ In order to use Tweepy we'll need the keys and secrets we got from Twitter. We'l
 
 
 
-<img src="imgs/environmentVars.png" alt="createEFS" style="zoom:50%;" />
+<img src="/imgs/environmentVars.png" alt="createEFS" style="zoom:50%;" />
 
 
 
