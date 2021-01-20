@@ -9,7 +9,7 @@ A while ago I trained a neural network to write poetry. Sometimes the model miss
 
 I'd 'been hosting it on an AWS EC2 server but now my 12 months of free-tier is running out. The bot only tweets a new poem once a day anyway so EC2 was a little overkill. I decided to check out a serverless framework and move it over to AWS Lambda. The process is usually fairly straightforward but I did encounter some roadblocks along the way and figured it would be good to share.
 
-One of the larger annoyances was the size of the Tensorflow library. Due to Lambda's hard cap only allowing deployment packages of 250MB and Tensorflow taking up the better part of a gigabyte I had to find a work around. 
+One of the larger annoyances was the size of the Tensorflow library. Due to Lambda's hard cap only allowing deployment packages of 250MB and Tensorflow taking up the better part of a gigabyte I had to find a work around.
 
 The Tensorflow developers envisioned this very scenario and they built [Tensorflow lite](https://www.tensorflow.org/lite) specifically as a lightweight version of Tensorflow for edge devices and memory limited applications in general. However, (at least at the time I write this) the Tensorflow lite converter does not work with the recurrent GRU unit I have in my model. The docs said it did but the GitHub issues page points to it being a known problem.
 
@@ -97,7 +97,7 @@ Now back on your Lambda function's page scroll down to the VPC tab. Click **Edit
 
 <img src="/imgs/configVPC.png" alt="createEFS" style="zoom:100%;" />
 
-Notice that connecting to a VPC prevents you from directly accessing the Internet from your function. We'll have to work around this later in order to send out tweets. 
+Notice that connecting to a VPC prevents you from directly accessing the Internet from your function. We'll have to work around this later in order to send out tweets.
 
 Now we'll add our EFS. From your function click the **File system** tab and add a file system. Choose the file system and access point you just set up. Finally, give it a root path.
 
@@ -105,7 +105,7 @@ Now we'll add our EFS. From your function click the **File system** tab and add 
 
 ## Testing it out
 
-By default Lambda times out after 3s. We'll need more time than that in order to load our Tensorflow library from EFS. In the **Basic settings** tab of your function change the timeout time to ~1min and give it some more memory as well. 512MB will be plenty. 
+By default Lambda times out after 3s. We'll need more time than that in order to load our Tensorflow library from EFS. In the **Basic settings** tab of your function change the timeout time to ~1min and give it some more memory as well. 512MB will be plenty.
 
 Now replace the pre-populated code with the following
 
@@ -160,7 +160,7 @@ You'll have to install Tweepy and save it to
 python/lib/python3.*/site-packages/
 ~~~
 
-this is the path that AWS expects python packages to be kept in. In order to install, I found it easiest to start a clean virtual environment and then install Tweepy in that. 
+this is the path that AWS expects python packages to be kept in. In order to install, I found it easiest to start a clean virtual environment and then install Tweepy in that.
 
 Once you have your package installed you'll have to compress it as a .zip. Then go the the Lambda console and select **Layers**. Select **Create layer** and upload your compressed file. I installed a python3.7 version of Tweepy so I chose that as my runtime. You'll have to chose yours.
 
