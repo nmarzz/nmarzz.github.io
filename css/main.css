@@ -49,8 +49,8 @@ footer ul {
 img {
   display: inline;
   margin: 0 auto;
-  height: 100%;
-  width: auto;
+  max-width: 100%;
+  height: auto;  
 }
 
 nav ul li, footer ul li {
@@ -75,10 +75,6 @@ p {
     color: #333;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 
 footer {
     border-top: 1px solid #777575;
