@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deploying a ML Twitter Bot on AWS Lambda"
-date: 2020-01-19
+date: 2021-01-19
 ---
 
 
