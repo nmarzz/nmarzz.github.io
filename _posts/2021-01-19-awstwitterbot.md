@@ -31,7 +31,7 @@ From the Management Console search for EFS. Once at the service click on "Create
 
 
 
-<img src="imgs/createEFS.png" alt="createEFS" style="zoom:50%;" />
+<img src="/imgs/createEFS.png" alt="createEFS" style="zoom:50%;" />
 
 
 
@@ -74,13 +74,13 @@ From the AWS Management Console search Lambda and then click "Create Function".
 
 We'll choose "Author from scratch" and choose Python 3.8 as our runtime. Then we'll create our function.
 
-<img src="imgs/createLambda.png" alt="createEFS" style="zoom:100%;" />
+<img src="/imgs/createLambda.png" alt="createEFS" style="zoom:100%;" />
 
 
 
 Now we have to connect our Lambda function to the same VPC as our EFS system. First we need to add some permissions. In the **Permissions** tab of your function click the role name. Then click the policy name. You're screen should look like this.
 
-<img src="imgs/policySummary.png" alt="createEFS" style="zoom:100%;" />
+<img src="/imgs/policySummary.png" alt="createEFS" style="zoom:100%;" />
 
 
 
@@ -106,7 +106,7 @@ Click **Edit Policy** and add the following JSON lines in the Statement.
 
 Now back on your Lambda function's page scroll down to the VPC tab. Click **Edit** and choose the same VPC as you have your EFS file system on. Choose all the subnets and your security group.
 
-<img src="imgs/configVPC.png" alt="createEFS" style="zoom:100%;" />
+<img src="/imgs/configVPC.png" alt="createEFS" style="zoom:100%;" />
 
 
 
@@ -114,7 +114,7 @@ Notice that connecting to a VPC prevents you from directly accessing the Interne
 
 Now we'll add our EFS. From your function click the **File system** tab and add a file system. Choose the file system and access point you just set up. Finally, give it a root path.
 
-<img src="imgs/fileSystemLambda.png" alt="createEFS" style="zoom:75%;" />
+<img src="/imgs/fileSystemLambda.png" alt="createEFS" style="zoom:75%;" />
 
 
 
@@ -143,7 +143,7 @@ def lambda_handler(event, context):
 
 This code mounts the EFS, loads Tensorflow and calls the package. If everything works you will see the following output.
 
-<img src="imgs/tfResponse.png" alt="createEFS" style="zoom:100%;" />
+<img src="/imgs/tfResponse.png" alt="createEFS" style="zoom:100%;" />
 
 Ok, we are nearly there. So far we have
 
@@ -185,7 +185,7 @@ this is the path that AWS expects python packages to be kept in.
 
 Once you have your package installed you'll have to compress it as a .zip. Then go the the Lambda console and select **Layers**. Select **Create layer** and upload your compressed file. I installed a python3.7 version of Tweepy so I chose that as my runtime. You'll have to chose yours.
 
-<img src="imgs/tweepyLayer.png" alt="createEFS" style="zoom:50%;" />
+<img src="/imgs/tweepyLayer.png" alt="createEFS" style="zoom:50%;" />
 
 
 
