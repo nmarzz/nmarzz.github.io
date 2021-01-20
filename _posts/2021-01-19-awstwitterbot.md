@@ -13,7 +13,7 @@ One of the larger annoyances was the size of the Tensorflow library. Due to Lamb
 
 The Tensorflow developers envisioned this very scenario and they built [Tensorflow lite](https://www.tensorflow.org/lite) specifically as a lightweight version of Tensorflow for edge devices and memory limited applications in general. However, (at least at the time I write this) the Tensorflow lite converter does not work with the recurrent GRU unit I have in my model. The docs said it did but the GitHub issues page points to it being a known problem.
 
-The workaround is to store the Tensorflow library in AWS Elastic File System (EFS). It is a little overkill but it works. In this post I'll go over:
+The workaround is to store the Tensorflow library in AWS Elastic File System (EFS). The full Tensorflow library is a little overkill but it works. In this post I'll go over:
 
 - How to create a Lambda function
 - How to store Tensorflow (or any package) in EFS
