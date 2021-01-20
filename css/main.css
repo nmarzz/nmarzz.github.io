@@ -20,6 +20,10 @@ h2 {
   font-weight: bold;
 }
 
+li{
+  margin: 10px 0;
+}
+
 href {
   text-decoration: none;
 }
