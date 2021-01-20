@@ -20,6 +20,9 @@ h2 {
   font-weight: bold;
 }
 
+href {
+  text-decoration: none;
+}
 nav ul {
     font-family:'Verdana', 'Geneva', 'Sans-Serif';
     padding: 0px;
@@ -50,7 +53,7 @@ img {
   display: inline;
   margin: 0 auto;
   max-width: 100%;
-  height: auto;  
+  height: auto;
 }
 
 nav ul li, footer ul li {
