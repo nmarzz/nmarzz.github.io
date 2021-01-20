@@ -86,7 +86,7 @@ Now we have to connect our Lambda function to the same VPC as our EFS system. Fi
 
 Click **Edit Policy** and add the following JSON lines in the Statement.
 
-```json
+~~~json
 {
       "Effect": "Allow",
       "Action": [
@@ -98,7 +98,7 @@ Click **Edit Policy** and add the following JSON lines in the Statement.
       ],
       "Resource": "*"
     }
-```
+~~~
 
 
 
@@ -124,7 +124,7 @@ By default Lambda times out after 3s. So in the **Basic settings** change the ti
 
 Now replace the pre-populated code with the following
 
-```python
+~~~python
 try: # Mount EFS
     import sys
     import os
@@ -137,7 +137,7 @@ import tensorflow as tf
 
 def lambda_handler(event, context):      
     return {'tweet':tf.__version__ }   
-```
+~~~
 
 
 
@@ -177,9 +177,9 @@ Tweepy is Twitter's python API. We'll also need this library in order to tweet. 
 
 You'll have to install Tweepy and save it to
 
-```python
+~~~python
 python/lib/python3.*/site-packages/
-```
+~~~
 
 this is the path that AWS expects python packages to be kept in.
 
@@ -193,9 +193,9 @@ Hit create and now we have a Tweepy layer.
 
 Create a new Lambda function now. This will be our driver function. Choose the appropriate python runtime. Once you have created your new function select the **Layers** tab and add the Tweepy layer you just created. Now the function should be able to successfully
 
-```python
+~~~python
 import tweepy
-```
+~~~
 
 In order to use Tweepy we'll need the keys and secrets we got from Twitter. We'll set those as environment variables to keep them out of the code. From your driver function go to the **Environment variables** tab and enter your keys and secrets.
 
@@ -214,7 +214,7 @@ And that's it! We've now done the following
 
 All that's left to do now is to test it. The following code invokes our worker function using boto3 and tweets its output.
 
-```python
+~~~python
 import json
 import boto3
 import tweepy
@@ -246,7 +246,7 @@ def callbot(event, context):
         'statusCode': 200,
         'body': json.dumps('Tweeted \n: {}'.format(tweet))
     }
-```
+~~~
 
 
 
