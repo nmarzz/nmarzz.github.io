@@ -16,7 +16,7 @@ June 20th, 2020
 Kelly Northcott
 Mountain Resorts Branch
 Min. of Forests, Lands, Natural Resource Operations
-#510-175 Second Avenue
+\#510-175 Second Avenue
 Kamloops, BC, V2C 5W1
 
 Dear Kelly Northcott,
