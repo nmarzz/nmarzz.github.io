@@ -290,13 +290,7 @@ function init() {
   pc.initPoints()
   setInterval(draw, 10)
 
-//   myCanvas.addEventListener("mousemove", function(e) {
-//     var cRect = myCanvas.getBoundingClientRect();        // Gets CSS pos, and width/height
-//     var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas
-//     var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make
-//     context.clearRect(0, 0, myCanvas.width, myCanvas.height);  // (0,0) the top left of the canvas
-//     context.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
-// });
+
 }
 
 function draw()
