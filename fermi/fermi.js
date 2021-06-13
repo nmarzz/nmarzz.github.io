@@ -8,7 +8,6 @@ class Node {
 class Edge{
   constructor(Node1,Node2) {this.Node1 = Node1 ; this.Node2 = Node2}
 }
-
 class Graph{
   constructor(width, height, num_nodes) {
   this.num_nodes = num_nodes
@@ -51,7 +50,6 @@ class Graph{
   }
 
 }
-
 class Alien{
   constructor(graph){
   this.id = alienID++
@@ -61,7 +59,7 @@ class Alien{
   graph.Nodes[this.node_location].explored = true
   graph.Nodes[this.node_location].explored = this.id
 
-}
+  }
 
   explore(){
     var d,i,current_node,closest_node, distances
@@ -103,10 +101,12 @@ class Controller{
 
     this.graph.distMatrix = this.graph.getDistances()
   }
+
   step(){
     for (var alien of this.aliens){
       alien.explore()
     }
+
   }
 
 }
@@ -133,7 +133,7 @@ function plotGraph(Graph){
 }
 //   Controlling
 function init() {
-  n_nodes = 50;
+  n_nodes = 3000;
   n_aliens = 3;
   controller = new Controller(n_nodes,n_aliens)
 
