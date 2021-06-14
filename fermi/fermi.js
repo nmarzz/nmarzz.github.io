@@ -1,7 +1,8 @@
 var context;
 var nodeID = 0;
 var alienID = 0;
-var alienColors = ["#DC143C", "#FF8C00","#9932CC","#00BFFF","#4B0082"];
+var alienSpeed = 0.01 * window.innerWidth; // expressed as a fraction of the screen width
+var alienColors = ["#FF8C00","#DC143C","#9932CC","#00BFFF","#4B0082"];
 class Node {
   constructor(x,y) {this.x = x; this.y = y; this.explored = false; this.explored_by = -1; this.id = nodeID++}
 }
@@ -55,9 +56,10 @@ class Alien{
   this.id = alienID++
   this.graph = graph
   this.num_nodes = graph.Nodes.length
+
   this.node_location = Math.floor(Math.random() * this.num_nodes)
   graph.Nodes[this.node_location].explored = true
-  graph.Nodes[this.node_location].explored = this.id
+  graph.Nodes[this.node_location].explored_by = this.id
 
   }
 
@@ -117,6 +119,8 @@ function plotGraph(Graph){
   // Plot first to hide lines
   for (edge of Graph.Edges){
     context.beginPath();
+    context.strokeStyle = "#696969"
+    context.setLineDash([5, 15]);
     context.moveTo(edge.Node1.x, edge.Node1.y);
     context.lineTo(edge.Node2.x, edge.Node2.y);
     context.stroke();
@@ -133,8 +137,8 @@ function plotGraph(Graph){
 }
 //   Controlling
 function init() {
-  n_nodes = 3000;
-  n_aliens = 3;
+  n_nodes = 30;
+  n_aliens = 1;
   controller = new Controller(n_nodes,n_aliens)
 
   setInterval(function(){controller.step()},1000)
