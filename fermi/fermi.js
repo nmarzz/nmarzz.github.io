@@ -1,7 +1,7 @@
 var context;
 var nodeID = 0;
 var alienID = 0;
-var alienSpeed = 0.01 * window.innerWidth; // expressed as a fraction of the screen width
+var alienSpeed = 0.001 * window.innerWidth; // expressed as a fraction of the screen width
 var alienColors = ["#FF8C00","#DC143C","#9932CC","#00BFFF","#4B0082"];
 class Node {
   constructor(x,y) {this.x = x; this.y = y; this.explored = false; this.explored_by = -1; this.id = nodeID++}
@@ -51,39 +51,52 @@ class Graph{
   }
 
 }
+
 class Alien{
   constructor(graph){
   this.id = alienID++
   this.graph = graph
   this.num_nodes = graph.Nodes.length
+  this.starting_node = this.graph.Nodes[Math.floor(Math.random() * this.num_nodes)]
+  this.starting_node.explored = true
+  this.starting_node.explored_by = this.id
+  this.x = this.starting_node.x
+  this.y = this.starting_node.y
 
-  this.node_location = Math.floor(Math.random() * this.num_nodes)
-  graph.Nodes[this.node_location].explored = true
-  graph.Nodes[this.node_location].explored_by = this.id
+  var distances = this.graph.distMatrix[this.starting_node.id]
+  this.target_node = this.graph.Nodes[distances.indexOf(Math.min(...distances))]
+  this.graph.Edges.push(new Edge(this.starting_node, this.target_node))
 
   }
 
   explore(){
-    var d,i,current_node,closest_node, distances
+    var d,i,current_target,new_target_node, distances,distance_to_target, angle
 
-    current_node = this.graph.Nodes[this.node_location]
-    distances = this.graph.distMatrix[this.node_location]
+    current_target = this.target_node
+    distance_to_target = Math.sqrt((this.x - current_target.x)**2 + (this.y - current_target.y)**2)
+    angle = Math.atan2(this.x - current_target.x,this.y - current_target.y)
 
-    if (!distances.some(isFinite)) {closest_node = current_node} else {closest_node = this.graph.Nodes[distances.indexOf(Math.min(...distances))]}
+    if (distance_to_target > alienSpeed){
+      this.x -= alienSpeed * Math.sin(angle)
+      this.y -= alienSpeed * Math.cos(angle)
 
-    // Make an edge between current node and closet node
-    this.graph.Edges.push(new Edge(current_node, closest_node))
+    } else {
+      distances = this.graph.distMatrix[current_target.id]
 
-    // Want to set the distances to explored nodes to Inf + update current node we are exploring
-    this.node_location = closest_node.id
-    closest_node.explored = true
-    closest_node.explored_by = this.id
+      if (!distances.some(isFinite)) {new_target_node = current_target} else {new_target_node = this.graph.Nodes[distances.indexOf(Math.min(...distances))]}
 
-    // Can't go to the node we are visiting
-    for (d of this.graph.distMatrix) {d[closest_node.id] = Infinity}
+      // Make an edge between current node and closet node
+      this.graph.Edges.push(new Edge(current_target, new_target_node))
 
-    // Finally, we plot after we update
-    plotGraph(this.graph)
+      // Want to set the distances to explored nodes to Inf + update current node we are exploring
+      this.target_node = new_target_node
+      new_target_node.explored = true
+      new_target_node.explored_by = this.id
+
+      // Can't go to the node we are visiting
+      for (d of this.graph.distMatrix) {d[new_target_node.id] = Infinity}
+  }
+
   }
 }
 
@@ -95,29 +108,29 @@ class Controller{
     context.canvas.height = window.innerHeight;
 
     this.graph = new Graph(context.canvas.width,context.canvas.height,n_nodes)
-    this.aliens = []
+    this.graph.distMatrix = this.graph.getDistances()
 
+    this.aliens = []
     for (var j=0;j < n_aliens;j++){
       this.aliens.push(new Alien(this.graph))
     }
 
-    this.graph.distMatrix = this.graph.getDistances()
   }
 
   step(){
-    for (var alien of this.aliens){
-      alien.explore()
-    }
-
+    for (var alien of this.aliens){alien.explore()}
+    plotGraph(this.graph,this.aliens)
   }
 
 }
 
 
-function plotGraph(Graph){
+function plotGraph(graph,aliens){
+  // clear space
+  context.clearRect(0, 0, context.canvas.width, context.canvas.height);
   // Plot edges
   // Plot first to hide lines
-  for (edge of Graph.Edges){
+  for (edge of graph.Edges){
     context.beginPath();
     context.strokeStyle = "#696969"
     context.setLineDash([5, 15]);
@@ -126,22 +139,34 @@ function plotGraph(Graph){
     context.stroke();
   }
   // Plot nodes
-  for (node of Graph.Nodes){
+  for (node of graph.Nodes){
 
     if (node.explored) {context.fillStyle = alienColors[node.explored_by]} else {context.fillStyle = "#000000"}
     context.beginPath()
     context.arc(node.x, node.y, 8, 0, Math.PI * 2, true);
     context.fill()
-
   }
+
+  for (alien of aliens){
+    context.beginPath();
+    context.moveTo(alien.x, alien.y);
+    context.lineTo(alien.x - 0.03 * context.canvas.width, alien.y -0.03 * context.canvas.width );
+    context.lineTo(alien.x + 0.03 * context.canvas.width, alien.y  - 0.03 * context.canvas.width);
+    context.closePath();
+
+    // context.fillStyle = alienColors[alien.id];
+    context.fillStyle = alienColors[alien.id]
+    context.fill();
+  }
+
 }
 //   Controlling
 function init() {
   n_nodes = 30;
-  n_aliens = 1;
+  n_aliens = 2;
   controller = new Controller(n_nodes,n_aliens)
 
-  setInterval(function(){controller.step()},1000)
+  setInterval(function(){controller.step()},10)
 
 
 
