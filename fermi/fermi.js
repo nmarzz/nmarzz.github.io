@@ -1,7 +1,7 @@
 var context;
 var nodeID = 0;
 var alienID = 0;
-var alienSpeed = 0.001 * window.innerWidth; // expressed as a fraction of the screen width
+var alienSpeed = 0.001 * Math.min(window.innerHeight,window.innerWidth); // expressed as a fraction of the screen width
 var alienColors = ["#FF8C00","#DC143C","#9932CC","#00BFFF","#4B0082"];
 class Node {
   constructor(x,y) {this.x = x; this.y = y; this.explored = false; this.explored_by = -1; this.id = nodeID++}
@@ -51,13 +51,13 @@ class Graph{
   }
 
 }
-
 class Alien{
   constructor(graph){
   this.id = alienID++
   this.graph = graph
   this.num_nodes = graph.Nodes.length
   this.starting_node = this.graph.Nodes[Math.floor(Math.random() * this.num_nodes)]
+  for (var d of this.graph.distMatrix) {d[this.starting_node.id] = Infinity} // Make starting node non-visitable
   this.starting_node.explored = true
   this.starting_node.explored_by = this.id
   this.x = this.starting_node.x
@@ -65,22 +65,27 @@ class Alien{
 
   var distances = this.graph.distMatrix[this.starting_node.id]
   this.target_node = this.graph.Nodes[distances.indexOf(Math.min(...distances))]
+  for (d of this.graph.distMatrix) {d[this.target_node.id] = Infinity}
   this.graph.Edges.push(new Edge(this.starting_node, this.target_node))
 
   }
+
 
   explore(){
     var d,i,current_target,new_target_node, distances,distance_to_target, angle
 
     current_target = this.target_node
     distance_to_target = Math.sqrt((this.x - current_target.x)**2 + (this.y - current_target.y)**2)
-    angle = Math.atan2(this.x - current_target.x,this.y - current_target.y)
+    this.angle = Math.atan2(this.x - current_target.x,current_target.y - this.y)
 
-    if (distance_to_target > alienSpeed){
-      this.x -= alienSpeed * Math.sin(angle)
-      this.y -= alienSpeed * Math.cos(angle)
+    if (distance_to_target > alienSpeed & this.target_node.explored == false){
+      this.x -= alienSpeed * Math.sin(this.angle)
+      this.y += alienSpeed * Math.cos(this.angle)
 
     } else {
+      this.target_node.explored = true
+      this.target_node.explored_by = this.id
+
       distances = this.graph.distMatrix[current_target.id]
 
       if (!distances.some(isFinite)) {new_target_node = current_target} else {new_target_node = this.graph.Nodes[distances.indexOf(Math.min(...distances))]}
@@ -90,17 +95,12 @@ class Alien{
 
       // Want to set the distances to explored nodes to Inf + update current node we are exploring
       this.target_node = new_target_node
-      new_target_node.explored = true
-      new_target_node.explored_by = this.id
-
       // Can't go to the node we are visiting
-      for (d of this.graph.distMatrix) {d[new_target_node.id] = Infinity}
+      for (d of this.graph.distMatrix) {d[this.target_node.id] = Infinity}
   }
 
   }
 }
-
-
 class Controller{
   constructor(n_nodes,n_aliens){
     context= myCanvas.getContext('2d');
@@ -123,9 +123,8 @@ class Controller{
   }
 
 }
-
-
 function plotGraph(graph,aliens){
+  var xl, xr, yl, yr,r,s
   // clear space
   context.clearRect(0, 0, context.canvas.width, context.canvas.height);
   // Plot edges
@@ -150,8 +149,22 @@ function plotGraph(graph,aliens){
   for (alien of aliens){
     context.beginPath();
     context.moveTo(alien.x, alien.y);
-    context.lineTo(alien.x - 0.03 * context.canvas.width, alien.y -0.03 * context.canvas.width );
-    context.lineTo(alien.x + 0.03 * context.canvas.width, alien.y  - 0.03 * context.canvas.width);
+    s = 0.03;
+    // var r = Math.PI/2;
+    // var r = alien.angle;
+    r =alien.angle;
+    // Draw triangle facing direction of movement
+    xl = alien.x - s * Math.min(window.innerHeight,window.innerWidth)
+    xr = alien.x + s * Math.min(window.innerHeight,window.innerWidth)
+    yl = alien.y - s * Math.min(window.innerHeight,window.innerWidth)
+    yr = alien.y - s * Math.min(window.innerHeight,window.innerWidth)
+    xl_r = Math.cos(r) * xl - Math.sin(r)*yl + alien.x - Math.cos(r)* alien.x + Math.sin(r)*alien.y
+    yl_r = Math.sin(r) * xl + Math.cos(r)*yl + alien.y - Math.sin(r)* alien.x - Math.cos(r)*alien.y
+
+    xr_r = Math.cos(r) * xr - Math.sin(r)*yr + alien.x - Math.cos(r)* alien.x + Math.sin(r)*alien.y
+    yr_r = Math.sin(r) * xr + Math.cos(r)*yr + alien.y - Math.sin(r)* alien.x - Math.cos(r)*alien.y
+    context.lineTo(xl_r,yl_r);
+    context.lineTo(xr_r,yr_r);
     context.closePath();
 
     // context.fillStyle = alienColors[alien.id];
@@ -163,10 +176,10 @@ function plotGraph(graph,aliens){
 //   Controlling
 function init() {
   n_nodes = 30;
-  n_aliens = 2;
+  n_aliens = 4;
   controller = new Controller(n_nodes,n_aliens)
 
-  setInterval(function(){controller.step()},10)
+  setInterval(function(){controller.step()},15)
 
 
 
