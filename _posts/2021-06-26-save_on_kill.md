@@ -1,10 +1,13 @@
-# Saving training progress on kill signals
+---
+layout: post
+title: "Saving training progress on kill signals"
+date: 2021-01-19
+---
 
 
+Fairly often you are executing some long running python code. But for some reason, part way through execution, the process running the code gets a kill signal.
 
-Fairly often you are executing some long running python code. But for some reason, part way through execution, the process running the code gets a kill signal. 
-
-You might have decided the code has run long enough and hit CNTR + C to interrupt the process or maybe your SSH session got disconnected—and you are wishing you used a screen— or whatever else might happen. 
+You might have decided the code has run long enough and hit CNTR + C to interrupt the process or maybe your SSH session got disconnected—and you are wishing you used a screen— or whatever else might happen.
 
 This has happened often enough to me that it is worth it to throw in some safeguards to make sure progress isn't lost when that interrupt comes through.     
 
@@ -22,7 +25,7 @@ def test():
     print(f'Testing iteration: {model[-1]}')
 
 epochs = 10
-model = [] 
+model = []
 # Defining our training loop
 for epoch in range(epochs):
     train(epoch)
@@ -42,7 +45,7 @@ class SaveOnKillSignal:
 
 This class will look for any SIGINT, SIGTERM, or SIGHUP and call  ```shutdown_function``` when that those signals are received.
 
-```shutdown_function``` can take any form you like, just make sure to include the ```*args``` bit. 
+```shutdown_function``` can take any form you like, just make sure to include the ```*args``` bit.
 
 ```python
 def shutdown_function(*args):
@@ -58,6 +61,3 @@ for epoch in range(epochs):
     train(epoch)
     test()   
 ```
-
-
-
