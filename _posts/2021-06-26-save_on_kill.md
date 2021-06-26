@@ -61,3 +61,16 @@ for epoch in range(epochs):
     train(epoch)
     test()   
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
