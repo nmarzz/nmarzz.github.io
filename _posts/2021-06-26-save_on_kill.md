@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Saving training progress on kill signals"
-date: 2021-01-19
+date: 2021-06-26
 ---
 
 
