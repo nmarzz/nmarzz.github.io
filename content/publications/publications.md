@@ -5,8 +5,15 @@ url: "/publications"
 ---
  
 <script src="https://kit.fontawesome.com/b4ec852ae6.js" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-#### Click the <i class="fa-solid fa-apple-whole"></i> for the Arxiv or the <i class="fa-solid fa-compass-drafting"></i> for the conference/journal.
+
+#### Click the:
+- <i class="fa-solid fa-apple-whole"></i> Apple for an Arxiv link
+- <i class="fa-solid fa-compass-drafting"></i> Compass for the conference/journal link
+- <i class="fa-solid fa-book"></i> Book for a bibtex dropdown
 
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
@@ -55,6 +62,20 @@ url: "/publications"
         <i class="fa-solid fa-compass-drafting"></i>
         </a>
     </span>
+    <a class="bibtexVar" 
+			   role="button" 
+			   data-toggle="collapse" 
+			   href="#bib+BIBTEXKEY+" 
+			   aria-expanded="false" 
+			   aria-controls="bib+BIBTEXKEY+" 
+			   extra="BIBTEXKEY">
+			  <i class="fa-solid fa-book"></i>
+    </a>
+    <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+        <div class="well">
+            <pre><span class="bibtexraw noread"></span></pre>
+        </div>
+    </div>    
     </li>
 </div>
  
