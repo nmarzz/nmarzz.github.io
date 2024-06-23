@@ -6,8 +6,8 @@ url: "/publications"
  
 <script src="https://kit.fontawesome.com/b4ec852ae6.js" crossorigin="anonymous"></script>
 <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
 #### Click the:
