@@ -70,8 +70,7 @@ params:
 
   homeInfoParams:
     Title: "Hi, I'm Noah 👋🏼 🎲 🌲"
-    Content: >
-    I'm a PhD student in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon.
+    Content: "I'm a PhD student in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon."
 
   socialIcons:
     - name: github
