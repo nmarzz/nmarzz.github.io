@@ -10,6 +10,9 @@ menu:
     - name: Publications
       url: publications     
       weight: 10
+    - name: Penguin
+      url: penguin
+      weight: 15
     - name: My CV
       url: "https://nmarzz.github.io/noah_marshall_cv.pdf"
       weight: 20
@@ -56,22 +59,28 @@ params:
   images: ["images/papermod-cover.png"]
 
   profileMode:
-    enabled: false
-    title: PaperMod
-    imageUrl: "#"
-    imageTitle: my image
-    # imageWidth: 120
-    # imageHeight: 120
-    buttons:
-      - name: Archives
-        url: archives
-      - name: Tags
-        url: tags
+    enabled: true
+    title: "👋🏼 hi, i'm noah 🌲"
+    imageUrl: "profile2.jpg"
+    imageTitle: An image of me
+    imageWidth: 200
+    imageHeight: 200
+    content: > 
+      I'm a PhD student in the Department of Math and Stats at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective 🎲
+    # buttons:
+    #   - name: Archives
+    #     url: archives
+    #   - name: Tags
+    #     url: tags
 
   homeInfoParams:
-    Title: "Hi, I'm Noah 👋🏼 🎲 🌲"
     Content: > 
       I'm a PhD student in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon.
+    Title: "Hi, I'm Noah 👋🏼 🎲 🌲"
+    imageUrl: "profile2.jpg"
+    imageWidth: 200
+    imageHeight: 200
+    imageTitle: my image
 
   socialIcons:
     - name: github
