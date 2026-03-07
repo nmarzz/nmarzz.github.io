@@ -59,7 +59,7 @@ params:
     enabled: true
     title: "Hi, I'm Noah"
     subtitle: "McGill University · Mathematics & Statistics"
-    imageUrl: "profile2.jpg"
+    imageUrl: "profile.jpeg"
     imageTitle: An image of me
     imageWidth: 200
     imageHeight: 200
@@ -76,7 +76,7 @@ params:
     Content: > 
       I'm a PhD student in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon.
     Title: "Hi, I'm Noah"
-    imageUrl: "profile2.jpg"
+    imageUrl: "profile.jpeg"
     imageWidth: 200
     imageHeight: 200
     imageTitle: my image
