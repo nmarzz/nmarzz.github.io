@@ -3,19 +3,65 @@ layout: "single"
 title: "Publications"
 url: "/publications"
 ---
- 
-<script src="https://kit.fontawesome.com/b4ec852ae6.js" crossorigin="anonymous"></script>
-<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+
+<style>
+  #bibtex_display ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  #bibtex_display h2 {
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.3em;
+  }
+  #bibtex_display li {
+    margin-bottom: 1.4em;
+    line-height: 1.6;
+  }
+  .pub-links {
+    margin-top: 0.3em;
+  }
+  .pub-links a {
+    display: inline-block;
+    font-size: 0.78em;
+    font-weight: 500;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    padding: 1px 7px;
+    margin-right: 4px;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.15s;
+  }
+  .pub-links a:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+  .pub-title {
+    color: #4a6fa5;
+  }
+  body.dark .pub-title {
+    color: #7aafd4;
+  }
+  .pub-bib pre {
+    margin-top: 0.6em;
+    font-size: 0.82em;
+    padding: 0.8em 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    border: 1px solid currentColor;
+    opacity: 0.7;
+  }
+</style>
+
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-
-#### Click the:
-- <i class="fa-solid fa-apple-whole"></i> Apple for an Arxiv link
-- <i class="fa-solid fa-compass-drafting"></i> Compass for the conference/journal link
-- <i class="fa-solid fa-book"></i> Book for a bibtex dropdown
-
-
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
 <bibtex src="../publications.bib"></bibtex>
 
@@ -26,56 +72,28 @@ url: "/publications"
   </div>
 </div>
 
-<div id="bibtex_display"></div> 
+<div id="bibtex_display"></div>
 
-<div class="bibtex_template"> 
-    <li>
-    <div class="if author">
-        <span class="author"></span><span>.</span>
-        <span class="if title"><b><span class="title"></span></b>,</span>
-	</div>		      
-    <span class="if journal"><em><span class="journal"></span></em>,</span>
-    <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
-    <span class="if editor"><span class="editor"></span> (editors),</span>
-    <span class="if publisher"><em><span class="publisher"></span></em>,</span>
-    <span class="if institution"><span class="institution"></span>,</span>
-    <span class="if address"><span class="address"></span>,</span>
-    <span class="if volume"><span class="volume"></span>,</span>
-    <span class="if journal number">(<span class="number"></span>),</span>
-    <span class="if pages"> pages <span class="pages"></span>,</span>
-    <span class="if month"><span class="month"></span>,</span>
-    <span class="if year"><span class="year"></span>.</span>
-    <span class="if note"><span class="note"></span>.</span>
-    <span class="if eprint">
-        <a class="bibtexVar" 
-            role="button" 
-            href="https://arxiv.org/abs/+EPRINT+" 
-            extra="EPRINT">
-        <i class="fa-solid fa-apple-whole"></i>
-        </a>
-    </span>   
-    <span class="if doi">
-        <a class="bibtexVar" 
-            role="button" 
-            href="https://doi.org/+DOI+"
-            extra="DOI">
-        <i class="fa-solid fa-compass-drafting"></i>
-        </a>
-    </span>
-    <a class="bibtexVar" 
-			   role="button" 
-			   data-toggle="collapse" 
-			   href="#bib+BIBTEXKEY+" 
-			   aria-expanded="false" 
-			   aria-controls="bib+BIBTEXKEY+" 
-			   extra="BIBTEXKEY">
-			  <i class="fa-solid fa-book"></i>
-    </a>
-    <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
-        <div class="well">
-            <pre><span class="bibtexraw noread"></span></pre>
-        </div>
-    </div>    
-    </li>
+<div class="bibtex_template">
+  <li>
+    <div>
+      <span class="author"></span>.
+      <span class="if title"><b class="pub-title"><span class="title"></span></b>.</span>
+      <span class="if journal"><em><span class="journal"></span></em>.</span>
+      <span class="if booktitle">In <em><span class="booktitle"></span></em>.</span>
+    </div>
+    <div class="pub-links">
+      <span class="if eprint">
+        <a class="bibtexVar" href="https://arxiv.org/abs/+EPRINT+" extra="EPRINT">arXiv</a>
+      </span>
+      <span class="if doi">
+        <a class="bibtexVar" href="https://doi.org/+DOI+" extra="DOI">DOI</a>
+      </span>
+      <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+"
+         aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">BibTeX</a>
+      <div class="bibtexVar collapse pub-bib" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+        <pre><span class="bibtexraw noread"></span></pre>
+      </div>
+    </div>
+  </li>
 </div>
- 

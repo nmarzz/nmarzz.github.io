@@ -58,12 +58,14 @@ params:
   profileMode:
     enabled: true
     title: "Hi, I'm Noah"
+    subtitle: "McGill University · Mathematics & Statistics"
     imageUrl: "profile2.jpg"
     imageTitle: An image of me
     imageWidth: 200
     imageHeight: 200
-    content: > 
-      I'm a PhD student in the Department of Math and Stats at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective 🎲
+    content: >
+      I'm a PhD student supervised by <a href="https://elliotpaquette.github.io">Elliot Paquette</a>.
+      I'm interested in how large-scale behaviour emerges from small-scale interactions, especially in machine learning.
     # buttons:
     #   - name: Archives
     #     url: archives
@@ -104,10 +106,10 @@ params:
 
   assets:
     disableHLJS: true
-    favicon: "/favicon.ico"
-    favicon16x16: "/favicon-16x16.png"
-    favicon32x32: "/favicon-32x32.png"
-    apple_touch_icon: "/apple-touch-icon.png"    
+    favicon: "/favicon.svg"
+    favicon16x16: "/favicon.svg"
+    favicon32x32: "/favicon.svg"
+    apple_touch_icon: "/favicon.svg"    
  
 
   cover:
