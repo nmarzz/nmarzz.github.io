@@ -60,6 +60,19 @@ url: "/publications"
   }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var observer = new MutationObserver(function() {
+    document.querySelectorAll('.pub-links a').forEach(function(a) {
+      if (a.textContent.trim() === 'Paper' && a.href.includes('arxiv.org')) {
+        a.parentElement.style.display = 'none';
+      }
+    });
+  });
+  var display = document.getElementById('bibtex_display');
+  if (display) observer.observe(display, { childList: true, subtree: true });
+});
+</script>
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/pcooksey/bibtex-js@1.0.0/src/bibtex_js.js"></script>
@@ -83,11 +96,11 @@ url: "/publications"
       <span class="if booktitle">In <em><span class="booktitle"></span></em>.</span>
     </div>
     <div class="pub-links">
+      <span class="if url">
+        <a class="bibtexVar" href="+URL+" extra="URL">Paper</a>
+      </span>
       <span class="if eprint">
         <a class="bibtexVar" href="https://arxiv.org/abs/+EPRINT+" extra="EPRINT">arXiv</a>
-      </span>
-      <span class="if doi">
-        <a class="bibtexVar" href="https://doi.org/+DOI+" extra="DOI">DOI</a>
       </span>
       <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+"
          aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">BibTeX</a>

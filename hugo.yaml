@@ -35,9 +35,8 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  # description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  # author: Theme PaperMod
-  # author: ["Me", "You"] # multiple authors
+  description: "Noah Marshall — PhD student in Mathematics & Statistics at McGill University, studying machine learning and probability."
+  author: Noah Marshall
 
   defaultTheme: auto
   # disableThemeToggle: true
@@ -106,10 +105,10 @@ params:
 
   assets:
     disableHLJS: true
-    favicon: "/favicon.svg"
-    favicon16x16: "/favicon.svg"
-    favicon32x32: "/favicon.svg"
-    apple_touch_icon: "/favicon.svg"    
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"    
  
 
   cover:
