@@ -69,8 +69,8 @@
   var canvas = document.getElementById('bm-canvas');
   var ctx = canvas.getContext('2d');
   var W, H;
-  var N_RING = 18;
-  var N_OUTER = 16;
+  var N_RING = 11;
+  var N_OUTER = 10;
   var N = N_RING + N_OUTER;
   var particles = [];
 
@@ -87,7 +87,7 @@
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
-  var RING_RADIUS = 280; 
+  var RING_RADIUS = 300; 
   function makeParticle(i) {
     if (i < N_RING) {
       var angle = (i / N_RING) * Math.PI * 2;
@@ -95,8 +95,11 @@
         x: W / 2 + Math.cos(angle) * RING_RADIUS,
         y: H / 2 + Math.sin(angle) * RING_RADIUS,
         trail: [],
-        maxTrail: 60 + Math.floor(Math.random() * 60),
-        step: 1. + Math.random() * 1.2,
+        maxTrail: 60,
+        step: 2. + Math.random() * 4,
+        drift: Math.random() * Math.PI * 2,
+        driftSpeed: (Math.random() - 0.5) * 0.04,
+        driftStrength: 0.5 + Math.random() * 0.8,
         delay: i * 4
       };
     } else {
@@ -111,8 +114,11 @@
       return {
         x: ox, y: oy,
         trail: [],
-        maxTrail: 80 + Math.floor(Math.random() * 80),
+        maxTrail: 60,
         step: 2. + Math.random() * 4,
+        drift: Math.random() * Math.PI * 2,
+        driftSpeed: (Math.random() - 0.5) * 0.04,
+        driftStrength: 0.5 + Math.random() * 0.8,
         delay: N_RING * 4 + j * 6
       };
     }
@@ -120,11 +126,7 @@
 
   for (var i = 0; i < N; i++) particles.push(makeParticle(i));
 
-  var driftAngle = 0;
-  var driftSpeed = 0.00;
-  var driftStrength = 0.1;
-
-  var FPS = 30;
+  var FPS = 20;
   var lastTime = 0;
   function draw(now) {
     requestAnimationFrame(draw);
@@ -134,14 +136,13 @@
     var dark = isDark();
     var color = dark ? '160,190,230' : '0,0,0';
 
-    driftAngle += driftSpeed;
-
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       if (p.delay > 0) { p.delay--; continue; }
+      p.drift += p.driftSpeed;
       var angle = Math.random() * Math.PI * 2;
-      p.x += Math.cos(angle) * p.step + Math.cos(driftAngle) * driftStrength;
-      p.y += Math.sin(angle) * p.step + Math.sin(driftAngle) * driftStrength;
+      p.x += Math.cos(angle) * p.step + Math.cos(p.drift) * p.driftStrength;
+      p.y += Math.sin(angle) * p.step + Math.sin(p.drift) * p.driftStrength;
 
       var wrapped = false;
       if (p.x < 0) { p.x += W; wrapped = true; }
