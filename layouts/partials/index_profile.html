@@ -96,7 +96,7 @@
         y: H / 2 + Math.sin(angle) * RING_RADIUS,
         trail: [],
         maxTrail: 60 + Math.floor(Math.random() * 60),
-        step: 3. + Math.random() * 5,
+        step: 1. + Math.random() * 1.2,
         delay: i * 4
       };
     } else {
@@ -124,7 +124,7 @@
   var driftSpeed = 0.00;
   var driftStrength = 0.1;
 
-  var FPS = 12;
+  var FPS = 30;
   var lastTime = 0;
   function draw(now) {
     requestAnimationFrame(draw);
