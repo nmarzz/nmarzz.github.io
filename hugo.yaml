@@ -35,7 +35,7 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Noah Marshall — PhD student in Mathematics & Statistics at McGill University, studying machine learning and probability."
+  description: "Noah Marshall — PhD candidate in Mathematics & Statistics at McGill University, studying machine learning and probability."
   author: Noah Marshall
 
   defaultTheme: auto
@@ -63,7 +63,7 @@ params:
     imageWidth: 200
     imageHeight: 200
     content: >
-      I'm a PhD student supervised by <a href="https://elliotpaquette.github.io">Elliot Paquette</a>.
+      I'm a PhD candidate supervised by <a href="https://elliotpaquette.github.io">Elliot Paquette</a>.
       I'm interested in how large-scale behaviour emerges from small-scale interactions, especially in machine learning.
     # buttons:
     #   - name: Archives
@@ -73,7 +73,7 @@ params:
 
   homeInfoParams:
     Content: > 
-      I'm a PhD student in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon.
+      I'm a PhD candidate in the Department of Mathematics and Statistics at McGill University, under the supervision of <a href="https://elliotpaquette.github.io">Elliot Paquette</a>. My research focuses on machine learning problems approached from a probabilistic perspective. Originally from the Kootenays, I'm also currently training for my first marathon.
     Title: "Hi, I'm Noah"
     imageUrl: "profile.jpeg"
     imageWidth: 200
