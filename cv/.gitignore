@@ -1,5 +1,5 @@
 .build/
-cv_industry.pdf
+cv_academic.pdf
 
 # stray LaTeX build artifacts
 *.aux
