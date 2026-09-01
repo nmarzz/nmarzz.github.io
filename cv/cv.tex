@@ -1,0 +1,237 @@
+\documentclass{muratcan_cv}
+
+% ---------------------------------------------------------------------------
+% Two builds from this one source:
+%   academic CV (default) : xelatex cv.tex
+%   industry resume       : xelatex -jobname=cv_industry "\def\industryversion{1}\input{cv.tex}"
+% The industry build adds the Skills section and drops the undergraduate
+% teaching entries. Everything else is shared.
+% ---------------------------------------------------------------------------
+\providecommand{\industryversion}{0}
+
+\centering
+\setname{Noah}{Marshall}
+\setaddress{Montr\' eal, QC}
+\setmobile{250-512-1215}
+\setmail{noah.marshall2@mail.mcgill.ca}
+
+\setlinkedinaccount{https://www.linkedin.com/in/noah-marshall-6a3790181/} %you can play with color of the template (red is also nice..)
+\setgithubaccount{https://github.com/nmarzz/}
+\setwebsite{https://nmarzz.github.io/}
+
+
+\setthemecolor{blue} %you can play with color of the template (red is also nice..)
+
+\begin{document}
+%Set variables
+%You can add sections, texts, explanations just by copying the style below. Replace the dummy texts "\lipsum[1][x-x]\par" with actual texts.
+%Create header
+\headerview
+\vspace{1ex}
+%Sections
+%
+% Summary
+%\addblocktext{Summary}{ }
+%
+%Education
+
+% \section{Research Interests}
+% \footnotesize{
+% My primary research interests lie in the intersection of probability and machine learning. I am particularly drawn towards representation learning and exploring the structure of neural network representations. In order to study these representations, my focus is on high dimensional optimization and the kernel theory of neural networks. To delve deeper into this field, I also plan to study the random features model of neural networks.}
+
+    
+\section{Education} 
+
+\datedexperience{McGill University}{Sept. 2023 - present} 
+    \explanation{PhD Candidate in Mathematics and Statistics} 
+    
+     \begin{itemize}
+         \footnotesize {
+         \coloreditem Supervisor: Dr. Elliot Paquette
+         \coloreditem Research Topics:
+         random matrix theory, stochastic processes, high-dimensional probability and optimization, generative models}
+     \end{itemize}
+
+\datedexperience{McGill University}{2020-2023} 
+    \explanation{Master of Science in Mathematics and Statistics} 
+    
+     \begin{itemize}
+         \footnotesize {
+         \coloreditem Supervisor: Dr. Adam Oberman
+         \coloreditem Cumulative GPA: 4.0/4.0
+         \coloreditem Associated with Mila – Quebec Artificial Intelligence Institute}
+     \end{itemize}
+     
+    \datedexperience{The University of British Columbia}{2015-2019} 
+    \explanation{Bachelor of Science - Honours in Mathematics and Minor in Data Science} 
+    \begin{itemize}
+        \footnotesize {
+         \coloreditem Cumulative GPA: 4.33/4.33
+         }
+    \end{itemize}
+    
+    
+    % \explanation{Bachelor of Science: Honours in Mathematics and Minor in Data Science} 
+    %  \explanationdetail{\coloredbullet\ % 
+    %  Honours research in optimization and queuing theory
+    %  }\explanationdetail{\coloredbullet\ % 
+    %  Gained strong foundational knowledge in statistics, analysis, numerical methods, and optimization,  
+    %  }
+    %  \explanationdetail{\coloredbullet\ % 
+    %  Strong background in data structures, databases, and machine learning methods}
+    
+% Experience
+
+\section{Research Experience}
+    \datedexperience{Microsoft + Nuance}{2023 Summer} 
+    \explanation{NLP Research Intern} 
+    \begin{itemize}
+         \footnotesize{         
+         \coloreditem Implemented generative AI tools for customer service
+         \coloreditem Augmented large language models using a knowledge base retriever
+         \coloreditem Improve response quality with prompt engineering
+         }
+     \end{itemize}
+    
+    \datedexperience{Phyla}{2021 Summer} 
+    \explanation{Machine Learning Research Intern} 
+    \begin{itemize}
+         \footnotesize{
+         \coloreditem Developed a graph neural network for classification of irritable bowel diseases (IBD) 
+         \coloreditem Implemented a pipeline in PyTorch to run, test, and log experimental results
+         \coloreditem  Developed a custom cross validation method to reduce the impact of batch effects}
+     \end{itemize}
+
+    %%%% UBC Research Assistant
+    \datedexperience{The University of British Columbia}{2020-2021} 
+    \explanation{Research Assistant 2} 
+      \begin{itemize}
+         \footnotesize{
+         \coloreditem  Analyzed and developed a differential equation model coupling the dynamics of opinion and disease
+         \coloreditem Find that more reactive populations can experience smaller peak epidemic size, but more epidemic waves and more cases
+         }
+     \end{itemize}
+    
+    %%%% MCRN
+     \datedexperience{Mathematics and Climate Research Network }{2019-2021} 
+    \explanation{Student Researcher}
+      \begin{itemize}
+         \footnotesize{         
+         \coloreditem Collaborated with an international group of students and professors to develop a novel data assimilation method
+         \coloreditem Investigated the use of model and data dimension reduction methods to improve the effectiveness of particle filters
+         }
+     \end{itemize}
+    
+\section{Publications}
+
+\begin{itemize}
+         \footnotesize{
+         \coloreditem Elliot Paquette, \textbf{Noah Marshall}, Lucas Benigni, Guangyuan Wang, Atish Agarwala, and Courtney Paquette. 2026. Phases of Muon: When Muon Eclipses SignSGD. \textit{Preprint} (arXiv:2605.09552)
+
+         \coloreditem Ke Liang Xiao, \textbf{Noah Marshall}, Atish Agarwala, and Elliot Paquette. 2025. Exact Risk Curves of signSGD in High-Dimensions: Quantifying Preconditioning and Noise-Compression Effects. \textit{International Conference on Machine Learning}
+
+         \coloreditem \textbf{Noah Marshall}, Ke Liang Xiao, Atish Agarwala, and Elliot Paquette. 2025. To Clip or Not to Clip: the Dynamics of SGD with Gradient Clipping in High-Dimensions. \textit{International Conference on Learning Representations}
+
+         \coloreditem Tiago Salvador, Stephanie Cairns, Vikram Voleti, \textbf{Noah Marshall}, and Adam Oberman. 2022. FairCal: Fairness Calibration for Face Verification. \textit{International Conference on Learning Representations}
+
+         \coloreditem Rebecca C. Tyson, \textbf{Noah D. Marshall}, and Bert O. Baumgaertner. 2022. Transient prophylaxis and multiple epidemic waves. \textit{AIMS Mathematics}
+
+         \coloreditem Aishah Albarakati, Marko Budi\v{s}i\'c, Rose Crocker, Juniper Glass-Klaiber, Sarah Iams, John Maclean, \textbf{Noah Marshall}, Colin Roberts, and Erik S. Van Vleck.$^*$ 2022. Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model. \textit{Computers \& Mathematics with Applications} {\scriptsize \textit{($^*$equal contribution, sorted by last name)}}
+         }
+\end{itemize}
+
+\ifnum\industryversion=1
+% Skills
+\section{Skills}
+    \newcommand{\skillone}{\createskill{Mathematics}{Probability \cpshalf stochastic processes \cpshalf random matrix theory \cpshalf high-dimensional statistics \cpshalf optimization}}
+    
+    \newcommand{\skilltwo}{\createskill{Modelling}{Covariance estimation in high dimensions \cpshalf particle filters \& data assimilation \cpshalf optimizer \& training dynamics \cpshalf scaling laws}}
+    
+    \createskills{\skillone,\skilltwo}
+\fi
+
+% Experience
+\section{Teaching and Mentorship}
+    \datedexperience{Course Instructor}{present}
+    \explanation{McGill University}
+     \begin{itemize}
+    \footnotesize{
+    \coloreditem Instructor for Intermediate Calculus, including a current section
+    }
+    \end{itemize}
+    
+    \datedexperience{Directed Reading Program}{2021-present}
+    \explanation{McGill University} 
+     \begin{itemize}
+    \footnotesize{
+    \coloreditem Lead a mentored reading program for undergraduate students 
+    \coloreditem Studied generative diffusion models and probabilistic graphical models
+    \coloreditem Currently directing reading on tree indexed stochastic processes and percolations on neural networks 
+    }
+    \end{itemize}
+    
+    \datedexperience{Graduate Teaching Assistant}{2022-present}
+     \explanation{McGill University} 
+     \begin{itemize}
+    \footnotesize{
+    \coloreditem 2024: Introduction to stochastic processes
+    \coloreditem 2023: Calculus 1
+    \coloreditem 2022: Calculus 1
+    }
+    \end{itemize}
+    
+    
+\ifnum\industryversion=0
+    \datedexperience{Undergraduate Teaching 
+    Assistant}{2016-2019}
+    \explanation{The University of British Columbia} 
+     \begin{itemize}
+    \footnotesize{
+    \coloreditem Calculus 1
+    \coloreditem Calculus 2
+    \coloreditem Introduction to Probability
+    }
+    \end{itemize}
+    
+    \datedexperience{Supplemental Learning Instructor}{2016-2019}
+    \explanation{The University of British Columbia} 
+     \begin{itemize}
+    \footnotesize{
+    \coloreditem Provide supplemental lectures for difficult first year math courses
+    \coloreditem Prepare practice final exams and midterms
+    \coloreditem Lead final exam and midterm review sessions
+    }
+    \end{itemize}
+\fi
+
+\section{Awards}
+
+
+\datedexperience{Canadian Graduate Scholarship (NSERC)}{present}
+
+\begin{itemize}
+    \footnotesize{
+    \coloreditem Program provides financial support to high-calibre students
+    }
+\end{itemize}
+
+\datedexperience{Institut des sciences math\'ematiques Graduate Scholarship}{present}
+
+\begin{itemize}
+    \footnotesize{
+    \coloreditem Awarded to outstanding PhD students in mathematics 
+    }
+\end{itemize}
+
+
+\datedexperience{NSERC Undergraduate Student Research Award}{2018}
+
+\begin{itemize}
+    \footnotesize{
+    \coloreditem Funding awarded to undergraduate students pursuing summer research in natural sciences or engineering
+    
+    }
+\end{itemize}
+%Footnote
+\createfootnote
+\end{document}
