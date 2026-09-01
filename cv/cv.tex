@@ -82,6 +82,16 @@
     
 % Experience
 
+\ifnum\industryversion=1
+% Skills
+\section{Skills}
+    \newcommand{\skillone}{\createskill{Mathematics}{Probability \cpshalf stochastic processes \cpshalf random matrix theory \cpshalf high-dimensional statistics \cpshalf optimization}}
+    
+    \newcommand{\skilltwo}{\createskill{Modelling}{Covariance estimation in high dimensions \cpshalf particle filters \& data assimilation \cpshalf optimizer \& training dynamics \cpshalf scaling laws}}
+    
+    \createskills{\skillone,\skilltwo}
+\fi
+
 \section{Research Experience}
     \datedexperience{Microsoft + Nuance}{2023 Summer} 
     \explanation{NLP Research Intern} 
@@ -125,57 +135,30 @@
 
 \begin{itemize}
          \footnotesize{
-         \coloreditem Elliot Paquette, \textbf{Noah Marshall}, Lucas Benigni, Guangyuan Wang, Atish Agarwala, and Courtney Paquette. 2026. Phases of Muon: When Muon Eclipses SignSGD. \textit{Preprint} (arXiv:2605.09552)
+         \coloreditem \venue{arXiv 2026} \href{https://arxiv.org/abs/2605.09552}{\textbf{Phases of Muon: When Muon Eclipses SignSGD}} --- E. Paquette, \textbf{Marshall}, Benigni, Wang, Agarwala, C. Paquette
 
-         \coloreditem Ke Liang Xiao, \textbf{Noah Marshall}, Atish Agarwala, and Elliot Paquette. 2025. Exact Risk Curves of signSGD in High-Dimensions: Quantifying Preconditioning and Noise-Compression Effects. \textit{International Conference on Machine Learning}
+         \coloreditem \venue{ICML 2025} \href{https://openreview.net/forum?id=MQpAF3Z1YD}{\textbf{Exact Risk Curves of signSGD in High-Dimensions: Quantifying Preconditioning and Noise-Compression Effects}} --- Xiao, \textbf{Marshall}, Agarwala, Paquette
 
-         \coloreditem \textbf{Noah Marshall}, Ke Liang Xiao, Atish Agarwala, and Elliot Paquette. 2025. To Clip or Not to Clip: the Dynamics of SGD with Gradient Clipping in High-Dimensions. \textit{International Conference on Learning Representations}
+         \coloreditem \venue{ICLR 2025} \href{https://openreview.net/forum?id=jmN1zXMq0O}{\textbf{To Clip or Not to Clip: the Dynamics of SGD with Gradient Clipping in High-Dimensions}} --- \textbf{Marshall}, Xiao, Agarwala, Paquette
 
-         \coloreditem Tiago Salvador, Stephanie Cairns, Vikram Voleti, \textbf{Noah Marshall}, and Adam Oberman. 2022. FairCal: Fairness Calibration for Face Verification. \textit{International Conference on Learning Representations}
+         \coloreditem \venue{ICLR 2022} \href{https://openreview.net/forum?id=nRj0NcmSuxb}{\textbf{FairCal: Fairness Calibration for Face Verification}} --- Salvador, Cairns, Voleti, \textbf{Marshall}, Oberman
 
-         \coloreditem Rebecca C. Tyson, \textbf{Noah D. Marshall}, and Bert O. Baumgaertner. 2022. Transient prophylaxis and multiple epidemic waves. \textit{AIMS Mathematics}
+         \coloreditem \venue{AIMS Math. 2022} \href{http://dx.doi.org/10.3934/math.2022311}{\textbf{Transient prophylaxis and multiple epidemic waves}} --- Tyson, \textbf{Marshall}, Baumgaertner
 
-         \coloreditem Aishah Albarakati, Marko Budi\v{s}i\'c, Rose Crocker, Juniper Glass-Klaiber, Sarah Iams, John Maclean, \textbf{Noah Marshall}, Colin Roberts, and Erik S. Van Vleck.$^*$ 2022. Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model. \textit{Computers \& Mathematics with Applications} {\scriptsize \textit{($^*$equal contribution, sorted by last name)}}
+         \coloreditem \venue{Comput. Math. Appl. 2022} \href{http://dx.doi.org/10.1016/j.camwa.2021.05.026}{\textbf{Model and Data Reduction for Data Assimilation: Particle Filters Employing Projected Forecasts and Data with Application to a Shallow Water Model}} --- Albarakati, Budi\v{s}i\'c, Crocker, Glass-Klaiber, Iams, Maclean, \textbf{Marshall}, Roberts, Van Vleck {\scriptsize \textit{(equal contribution, sorted by last name)}}
          }
 \end{itemize}
 
-\ifnum\industryversion=1
-% Skills
-\section{Skills}
-    \newcommand{\skillone}{\createskill{Mathematics}{Probability \cpshalf stochastic processes \cpshalf random matrix theory \cpshalf high-dimensional statistics \cpshalf optimization}}
-    
-    \newcommand{\skilltwo}{\createskill{Modelling}{Covariance estimation in high dimensions \cpshalf particle filters \& data assimilation \cpshalf optimizer \& training dynamics \cpshalf scaling laws}}
-    
-    \createskills{\skillone,\skilltwo}
-\fi
-
 % Experience
 \section{Teaching and Mentorship}
-    \datedexperience{Course Instructor}{2026}
+    \datedexperience{Course Instructor --- Intermediate Calculus}{2026}
     \explanation{McGill University}
-     \begin{itemize}
-    \footnotesize{
-    \coloreditem Instructor for Intermediate Calculus
-    }
-    \end{itemize}
     
-    \datedexperience{Directed Reading Program}{2021-present}
-    \explanation{McGill University} 
-     \begin{itemize}
-    \footnotesize{
-    \coloreditem Lead a mentored reading program for undergraduate students 
-    \coloreditem Topics: Gaussian processes on manifolds, generative diffusion models, probabilistic graphical models, tree indexed stochastic processes, percolations on neural networks
-    }
-    \end{itemize}
+    \datedexperience{Directed Reading Program --- mentor}{2021-present}
+    \explanation{McGill University. Gaussian processes on manifolds, generative diffusion models, probabilistic graphical models, tree indexed stochastic processes, percolations on neural networks}
     
     \datedexperience{Graduate Teaching Assistant}{2022-present}
-     \explanation{McGill University} 
-     \begin{itemize}
-    \footnotesize{
-    \coloreditem Introduction to stochastic processes, Calculus 1
-    }
-    \end{itemize}
-    
+    \explanation{McGill University. Introduction to stochastic processes, Calculus 1}
     
 \ifnum\industryversion=0
     \datedexperience{Undergraduate Teaching 
@@ -202,32 +185,12 @@
 
 \section{Awards}
 
-
 \datedexperience{Canadian Graduate Scholarship (NSERC)}{present}
-
-\begin{itemize}
-    \footnotesize{
-    \coloreditem Program provides financial support to high-calibre students
-    }
-\end{itemize}
 
 \datedexperience{Institut des sciences math\'ematiques Graduate Scholarship}{present}
 
-\begin{itemize}
-    \footnotesize{
-    \coloreditem Awarded to outstanding PhD students in mathematics 
-    }
-\end{itemize}
-
-
 \datedexperience{NSERC Undergraduate Student Research Award}{2018}
 
-\begin{itemize}
-    \footnotesize{
-    \coloreditem Funding awarded to undergraduate students pursuing summer research in natural sciences or engineering
-    
-    }
-\end{itemize}
 %Footnote
 \createfootnote
 \end{document}

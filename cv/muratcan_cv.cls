@@ -4,7 +4,7 @@
 % Might be interpreted as an easier-to-edit or easier-to-understand-what-is-going-on version of it.
 \author{Murat Can Karacabey}
 \RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
-\LoadClass[11pt]{article}
+\LoadClass[10pt]{article}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
 \RequirePackage[sfdefault]{noto}
@@ -13,7 +13,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
-\RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\RequirePackage[left=0.55in,top=0.3in,right=0.55in,bottom=0.4in]{geometry} % Document margins
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -23,7 +23,7 @@
 
 
 \usepackage{enumitem}
-\setlist{itemsep=0.02cm, topsep=1pt}
+\setlist{itemsep=0pt, topsep=0pt, parsep=0pt}
 
 \pagestyle{empty}
 
@@ -56,7 +56,7 @@
 
 % can makebox also be used?
 \newcommand\headerview{
-\begin{minipage}{0.45\linewidth}
+\begin{minipage}{0.8\linewidth}
     \center \name \\[0.05cm] 
     \contact % address \ mobile \\ mail
 \end{minipage}
@@ -76,7 +76,7 @@
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
+        {\small \@address \cps \@mobile \cps \@mail%
         \\%
         \linkedinview \cps \githubview \cps \websiteview\\ 
         } % 
@@ -111,6 +111,9 @@ Position: & \@claimedposition \\
 \newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
 
 \newcommand{\coloreditem}{\item[\textcolor{\@themecolor}{\textbullet}]}
+
+% Venue tag for publication entries, e.g. \venue{ICML 2025}
+\newcommand{\venue}[1]{{\color{\@themecolor}\textbf{[#1]}}}
 
 % Edit section styles
 
